@@ -1,7 +1,7 @@
 package models
 
 import (
-	"beego"
+	""github.com/astaxie/beego""
 )
 
 type BaseController struct {
