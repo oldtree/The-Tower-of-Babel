@@ -15,13 +15,8 @@ type Project struct {
 	Id              int64
 	User_id         int64
 	User_email      string
-	User_address    string
-	User_password   string
-	User_created    time.Time
-	User_update     time.Time
-	User_company    string
-	User_want_to_be string
-	User_really_is  string
+	Project_created time.Time
+	Project_update  time.Time
 }
 
 func (p *Project) Insert() error {
