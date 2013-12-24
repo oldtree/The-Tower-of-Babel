@@ -12,16 +12,17 @@ func init() {
 }
 
 type User struct {
-	Id              int64
-	User_name       string
-	User_email      string
-	User_address    string
-	User_password   string
-	User_created    time.Time
-	User_update     time.Time
-	User_company    string
-	User_want_to_be string
-	User_really_is  string
+	Id                     int64
+	User_name              string    `orm:"size(30)"`
+	User_email             string    `orm:"size(30);unique"`
+	User_address           string    `orm:"size(128)"`
+	User_password          string    `orm:"size(30);unique"`
+	User_created           time.Time `orm:"auto_now_add"`
+	User_update            time.Time `orm:"auto_now"`
+	User_company           string    `orm:"size(128)"`
+	User_want_to_be        string    `orm:"size(128)"`
+	User_really_is         string    `orm:"size(128)"`
+	User_project_json_path string    `orm:"size(128)"`
 }
 
 func (u *User) Insert() error {
