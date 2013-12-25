@@ -31,15 +31,15 @@ func (p *Project) Delete() error {
 	return err
 }
 func (p *Project) Read(fileds ...string) error {
-	_, err := orm.NewOrm().Read(p, fileds...)
+	err := orm.NewOrm().Read(p, fileds...)
 	return err
 }
 
 func (p *Project) Update(fileds ...string) error {
-	err := orm.NewOrm().Update(u, fileds...)
+	_, err := orm.NewOrm().Update(p, fileds...)
 	return err
 }
 
-func Project() orm.QuerySeter {
+func Projects() orm.QuerySeter {
 	return orm.NewOrm().QueryTable("Projects").OrderBy("-Id")
 }

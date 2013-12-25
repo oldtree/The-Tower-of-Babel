@@ -20,11 +20,11 @@
 
     <!-- Local JavaScript -->
     <script src="static/js/docs.js"></script>
-    <script src="static/js/github.info.js"></script>
+
 
     <title>{{.title}}</title>
 </head>
-<body class="metro"  style="background: url(static/img/sample.jpg)">
+<body class="metro"  style="background: url(static/img/3.jpg)">
     <!--<header class="bg-dark" data-load="static/header.html"></header>-->
 
     <div class="page">
@@ -45,7 +45,7 @@
                                 <td class="span4 text-right" style="vertical-align:middle"><strong>UserName:</strong></td>
                                 <td>
                                     <div data-role="input-control" class="input-control text nbm">
-                                        <input value="" type="text">
+                                        <input name ="username" value="" type="text">
                                     </div>
                                 </td>
                             </tr>
@@ -53,7 +53,7 @@
                                 <td class="span4 text-right" style="vertical-align:middle"><strong>Password:</strong></td>
                                 <td>
                                     <div class="input-control password nbm" data-role="input-control">
-                                        <input type="password">
+                                        <input name = "password" type="password">
                                         <button class="btn-reveal" tabindex="-1" type="button"></button>
                                     </div>
                                 </td>
@@ -69,9 +69,10 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="span4 text-right" style="vertical-align:middle"></td>
+                          <td class="span4 text-right" style="vertical-align:middle"></td>
                                 <td>
-                                    <input class="inverse" value="Enter" type="submit">
+                                    <input class="button" value="   µÇÂ¼   " type="submit" onClick="window.location.href='/login'">
+                                    <input class="button1" value="   ×¢²á   " type="button" onClick="window.location.href='/register'">
                                 </td>
                             </tr>
                         </tbody></table>

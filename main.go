@@ -12,7 +12,7 @@ const (
 	APP_VERSION = "0.1.1.1"
 )
 
-func initialize() {
+func init() {
 	utils.LoadConfig()
 }
 func main() {
@@ -24,7 +24,10 @@ func main() {
 	beego.Info(beego.AppName, utils.AppVersion, utils.AppUrl)
 
 	beego.Router("/", &routers.MainController{})
-
+	beego.Router("/register", &routers.RegisterController{}, "post:Post")
+	beego.Router("/login", &routers.MainController{}, "post:Post")
+	beego.Router("/home", &routers.MainController{}, "get:Get")
+	beego.Router("/home/edit_self", &routers.MainController{}, "post:Post")
 	fmt.Println("Hello World!")
 	beego.Run()
 }

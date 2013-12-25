@@ -1,17 +1,25 @@
 package routers
 
 import (
+	"fmt"
 	"github.com/astaxie/beego"
 )
+
+func Debug(infos ...interface{}) {
+	if true {
+		fmt.Printf("DEBUG: "+fmt.Sprintf("%s\n", infos[0]), infos[1:]...)
+	}
+}
 
 type MainController struct {
 	beego.Controller
 }
 
 func (this *MainController) Get() {
-	this.Data["title"] = "this is the end"
-	this.Data["path1"] = "F:/forgo/src/Eva/static/img"
-	this.Data["path2"] = "F:/forgo/src/Eva/static/img"
-	this.Data["path3"] = "F:/forgo/src/Eva/static/img"
+	this.Data["title"] = "login"
+	this.TplNames = "first.html"
+}
+func (this *MainController) Post() {
+	this.Data["title"] = "login"
 	this.TplNames = "first.html"
 }

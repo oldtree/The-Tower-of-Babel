@@ -123,6 +123,7 @@ func LoadConfig() {
 	}
 	orm.RegisterDataBase("default", driverName, dataSource, maxIdle, maxOpen)
 	orm.RunCommand()
+	orm.Debug = true
 	err = orm.RunSyncdb("default", false, true)
 
 	orm.Debug = Cfg.MustBool("orm", "debug_log")

@@ -6,6 +6,12 @@ import (
 	"time"
 )
 
+func Debug(infos ...interface{}) {
+	if true {
+		fmt.Printf("DEBUG: "+fmt.Sprintf("%s\n", infos[0]), infos[1:]...)
+	}
+}
+
 func init() {
 	fmt.Println("init models file ")
 	orm.RegisterModel(new(User))
@@ -13,10 +19,10 @@ func init() {
 
 type User struct {
 	Id                     int64
-	User_name              string    `orm:"size(30)"`
-	User_email             string    `orm:"size(30);unique"`
+	User_name              string    `orm:"size(128)"`
+	User_email             string    `orm:"size(128);unique"`
 	User_address           string    `orm:"size(128)"`
-	User_password          string    `orm:"size(30);unique"`
+	User_password          string    `orm:"size(128)"`
 	User_created           time.Time `orm:"auto_now_add"`
 	User_update            time.Time `orm:"auto_now"`
 	User_company           string    `orm:"size(128)"`
@@ -25,6 +31,21 @@ type User struct {
 	User_project_json_path string    `orm:"size(128)"`
 }
 
+func New_user(user_name string, user_email string, user_passworld string) User {
+	new_user := User{}
+	new_user.User_name = user_name
+	new_user.User_email = user_email
+	new_user.User_password = user_passworld
+	return new_user
+}
+
+func Login_user(user_email string, user_passworld string) User {
+	new_user := User{}
+	new_user.User_email = user_email
+	new_user.User_password = user_passworld
+	return new_user
+
+}
 func (u *User) Insert() error {
 	_, err := orm.NewOrm().Insert(u)
 	return err
@@ -35,12 +56,12 @@ func (u *User) Delete() error {
 	return err
 }
 func (u *User) Read(fileds ...string) error {
-	_, err := orm.NewOrm().Read(u, fileds...)
+	err := orm.NewOrm().Read(u, fileds...)
 	return err
 }
 
 func (u *User) Update(fileds ...string) error {
-	err := orm.NewOrm().Update(u, fileds...)
+	_, err := orm.NewOrm().Update(u, fileds...)
 	return err
 }
 
