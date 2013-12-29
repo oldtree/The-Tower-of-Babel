@@ -3,28 +3,29 @@
 <head>
     <meta charset="utf-8">
 
-    <link href="static/css/metro-bootstrap.css" rel="stylesheet">
-    <link href="static/css/metro-bootstrap-responsive.css" rel="stylesheet">
-    <link href="static/css/docs.css" rel="stylesheet">
-    <link href="static/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../static/css/metro-bootstrap.css" rel="stylesheet">
+    <link href="../static/css/metro-bootstrap-responsive.css" rel="stylesheet">
+    <link href="../static/css/docs.css" rel="stylesheet">
+    <link href="../static/js/prettify/prettify.css" rel="stylesheet">
 
     <!-- Load JavaScript Libraries -->
-    <script src="static/js/jquery/jquery.min.js"></script>
-    <script src="static/js/jquery/jquery.widget.min.js"></script>
-    <script src="static/js/jquery/jquery.mousewheel.js"></script>
-    <script src="static/js/prettify/prettify.js"></script>
-    <script src="static/js/holder/holder.js"></script>
+    <script src="../static/js/jquery/jquery.min.js"></script>
+    <script src="../static/js/jquery/jquery.widget.min.js"></script>
+    <script src="../static/js/jquery/jquery.mousewheel.js"></script>
+    <script src="../static/js/prettify/prettify.js"></script>
+    <script src="../static/js/holder/holder.js"></script>
 
     <!-- Metro UI CSS JavaScript plugins -->
-    <script src="static/js/load-metro.js"></script>
+    <script src="../static/js/load-metro.js"></script>
 
     <!-- Local JavaScript -->
-    <script src="static/js/docs.js"></script>
+    <script src="../static/js/docs.js"></script>
 
 
     <title>{{.title}}</title>
 </head>
-<body class="metro"  style="background: url(static/img/3.jpg)">
+<body class="metro"  style="background: url(static/img/clouds.jpg)">
+     <nav class="navigation-bar fixed-top">...</nav>
     <!--<header class="bg-dark" data-load="static/header.html"></header>-->
 
     <div class="page">
@@ -36,7 +37,7 @@
                 </h1>
                 <p>Here is the new world !</p>
 		
-        <form>
+        <form id="UserLoginForm"  method = "Post">
             <div class="grid">
                 <div class="row">
                     <div class="span10">
@@ -45,7 +46,7 @@
                                 <td class="span4 text-right" style="vertical-align:middle"><strong>UserName:</strong></td>
                                 <td>
                                     <div data-role="input-control" class="input-control text nbm">
-                                        <input name ="username" value="" type="text">
+                                        <input name ="email" value="" type="text">
                                     </div>
                                 </td>
                             </tr>
@@ -71,8 +72,8 @@
                             <tr>
                           <td class="span4 text-right" style="vertical-align:middle"></td>
                                 <td>
-                                    <input class="button" value="   µÇÂ¼   " type="submit" onClick="window.location.href='/login'">
-                                    <input class="button1" value="   ×¢²á   " type="button" onClick="window.location.href='/register'">
+                                    <input class="button" value="   ç™»å½•   " type="submit" >
+                                    <input class="button1" value="   æ³¨å†Œ   " type="button" onClick="window.location.href='/register'">
                                 </td>
                             </tr>
                         </tbody></table>

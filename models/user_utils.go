@@ -2,11 +2,65 @@ package models
 
 import (
 	"Eva1/utils"
+	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	"github.com/astaxie/beego/session"
 	"strings"
 )
+
+func User_login(user *User, c *beego.Controller) bool {
+	//login_user_conn := orm.NewOrm()
+	//login_user_conn.Using("eva")
+	cond := orm.NewCondition()
+	//cond = cond.And("User_email", user.User_email).And("User_password", user.User_password)
+	cond = cond.And("User_email", user.User_email).And("User_password", user.User_password)
+
+	var maps []orm.Params
+	login_user_conn := orm.NewOrm()
+	n, err := login_user_conn.QueryTable("user").SetCond(cond).Values(&maps, "User_email")
+	if err != nil {
+		return false
+	}
+	fmt.Println(n)
+	//if n == 1 {
+	//	for _, m := range maps {
+	//		if orm.ToStr(m["User_email"]) == user.User_email {
+	//			fmt.Println("66666666666666666666")
+	//			if orm.ToStr(m["User_password"]) == user.User_password {
+	//				fmt.Println(orm.ToStr(m["User_password"]))
+	//				fmt.Println("5555555555555555555555")
+	//				return true
+	//			}
+	//		}
+
+	//	}
+	//}
+	fmt.Println("5555555555555555555555")
+	if n == 1 {
+		err := login_user_conn.Raw("SELECT Id,User_name,User_address,User_password,User_created,User_update,User_company,User_want_to_be,User_really_is,User_project_json_path,User_email, name FROM user WHERE id = ?", user.User_email).QueryRow(user)
+		fmt.Println(err)
+		if err != nil {
+			fmt.Println(user.Id)
+		}
+		return true
+	}
+	//err := login_user_conn.Read(user)
+	//if err == orm.ErrNoRows {
+	//	return false
+	//} else if err == orm.ErrMissPK {
+	//	return false
+	//} else {
+	//	fmt.Println(user.User_email, user.User_password)
+	//}
+	//fmt.Println("22222222222222222222222")
+
+	return false
+}
+
+func User_logout(user *User, c *beego.Controller) {
+	c.Redirect("/home", 302)
+}
 
 func LoginUser(user *User, c *beego.Controller) {
 	c.CruSession = beego.GlobalSessions.SessionRegenerateId(c.Ctx.ResponseWriter, c.Ctx.Request)

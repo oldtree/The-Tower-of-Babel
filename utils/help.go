@@ -30,7 +30,9 @@ func EncodePassword(rawPwd string, salt string) string {
 	pwd := PBKDF2([]byte(rawPwd), []byte(salt), 10000, 50, sha256.New)
 	return hex.EncodeToString(pwd)
 }
-
+func DecodePassword(password string) string {
+	return password
+}
 func PBKDF2(password, salt []byte, iter, keyLen int, h func() hash.Hash) []byte {
 	prf := hmac.New(h, password)
 	hashLen := prf.Size()

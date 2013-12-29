@@ -3,29 +3,26 @@ package models
 import (
 	"fmt"
 	"github.com/astaxie/beego/orm"
-	"time"
 )
-
-func Debug(infos ...interface{}) {
-	if true {
-		fmt.Printf("DEBUG: "+fmt.Sprintf("%s\n", infos[0]), infos[1:]...)
-	}
-}
-
-func init() {
-	fmt.Println("init models file ")
-	orm.RegisterModel(new(Home))
-}
 
 type Home struct {
 	Id              int64
 	User            *User  `orm:"rel(fk)"`
-	User_email      string `orm:"size(30)"`
 	User_name       string `orm:"size(128)"`
 	User_email      string `orm:"size(128);unique"`
 	User_address    string `orm:"size(128)"`
 	User_want_to_be string `orm:"size(128)"`
 	User_really_is  string `orm:"size(128)"`
+}
+
+//type UserloginForm struct {
+//	Email    string `form:"email" valid:"Required;Email;MaxSize(80)"`
+//	Password string `form:"password" valid:"Required;MinSize(4);MaxSize(30)"`
+//}
+
+func init() {
+	fmt.Println("init models file ")
+	orm.RegisterModel(new(Home))
 }
 
 func (u *Home) Insert() error {
@@ -47,6 +44,6 @@ func (u *Home) Update(fileds ...string) error {
 	return err
 }
 
-func Home() orm.QuerySeter {
+func SelfHome() orm.QuerySeter {
 	return orm.NewOrm().QueryTable("Home").OrderBy("-Id")
 }

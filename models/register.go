@@ -1,18 +1,17 @@
 package models
 
 import (
-	"Eva1/utils"
+	//	"Eva1/utils"
 	"fmt"
 	"github.com/astaxie/beego/orm"
 	"github.com/astaxie/beego/validation"
 )
 
 type RegisterForm struct {
-	UserName string `form:"name" valid:"Required;AlphaDash;MinSize(5);MaxSize(30)"`
-	Email    string `form:"email" valid:"Required;Email;MaxSize(80)"`
-
-	Password   string `form:"password" valid:"Required;MinSize(4);MaxSize(30)"`
-	PasswordRe string `form:"passwordre" valid:"Required;MinSize(4);MaxSize(30)"`
+	Email      string `form:"email" valid:"Required;Email;MaxSize(80)"`
+	UserName   string `form:"name" valid:"Required;AlphaDash;MinSize(5);MaxSize(30)"`
+	Password   string `form:"pwd" valid:"Required;MinSize(4);MaxSize(30)"`
+	PasswordRe string `form:"rpwd" valid:"Required;MinSize(4);MaxSize(30)"`
 }
 
 func (form *RegisterForm) Valid(v *validation.Validation) {
@@ -33,18 +32,21 @@ func (form *RegisterForm) Valid(v *validation.Validation) {
 	}
 }
 func RegisterUser(user *User, form RegisterForm) error {
-	salt := GetUserSalt()
-	pwd := utils.EncodePassword(form.Password, salt)
-	fmt.Println(user.User_password)
+	//salt := GetUserSalt()
+	//pwd := utils.EncodePassword(form.Password, salt)
+
+	//user.User_name = form.UserName
+	//user.User_email = form.Email
+
+	//// save salt and encode password, use $ as split char
+	//user.User_password = fmt.Sprintf("%s$%s", salt, pwd)
+	//// save md5 email value for gravatar
+	//user.User_email = utils.EncodeMd5(form.Email)
+
+	user.User_password = form.Password
 	user.User_name = form.UserName
 	user.User_email = form.Email
-
-	// save salt and encode password, use $ as split char
-	user.User_password = fmt.Sprintf("%s$%s", salt, pwd)
-	// save md5 email value for gravatar
-	user.User_email = utils.EncodeMd5(form.Email)
-	fmt.Println(len(user.User_password))
-	fmt.Println(user.User_password)
+	fmt.Println(form.UserName)
 	return user.Insert()
 }
 func CanRegistered(userName string, email string) (bool, bool, error) {
@@ -60,8 +62,7 @@ func CanRegistered(userName string, email string) (bool, bool, error) {
 
 	e1 := true
 	e2 := true
-	fmt.Println(e1)
-	fmt.Println(e2)
+
 	if n > 0 {
 		for _, m := range maps {
 			if e1 && orm.ToStr(m["UserName"]) == userName {
