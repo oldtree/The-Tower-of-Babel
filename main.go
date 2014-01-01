@@ -24,7 +24,7 @@ func main() {
 	}
 	beego.Info(beego.AppName, utils.AppVersion, utils.AppUrl)
 	common_layer.Using_cache()
-
+	common_layer.Mongo_main()
 	beego.Router("/", &routers.MainController{}, "get:FirstGet")
 	beego.Router("/login", &routers.MainController{}, "get:Get;post:Post")
 
