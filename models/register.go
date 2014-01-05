@@ -10,8 +10,8 @@ import (
 type RegisterForm struct {
 	Email      string `form:"email" valid:"Required;Email;MaxSize(80)"`
 	UserName   string `form:"name" valid:"Required;AlphaDash;MinSize(5);MaxSize(30)"`
-	Password   string `form:"pwd" valid:"Required;MinSize(4);MaxSize(30)"`
-	PasswordRe string `form:"rpwd" valid:"Required;MinSize(4);MaxSize(30)"`
+	Password   string `form:"password" valid:"Required;MinSize(4);MaxSize(30)"`
+	PasswordRe string `form:"passwordre" valid:"Required;MinSize(4);MaxSize(30)"`
 }
 
 func (form *RegisterForm) Valid(v *validation.Validation) {

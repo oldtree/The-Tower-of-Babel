@@ -6,10 +6,22 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	"github.com/astaxie/beego/session"
+	"github.com/astaxie/beego/validation"
 	"strings"
 )
 
 func User_login(user *User, c *beego.Controller) bool {
+	errmsg := make(map[string]string)
+	valid := validation.Validation{}
+	if v := valid.Required(user.User_password, "password"); !v.Ok {
+		errmsg["password"] = "password error "
+	}
+
+	if v := valid.Required(user.User_email, "email"); !v.Ok {
+		errmsg["email"] = "email error"
+	} else if v := valid.Email(user.User_email, "email"); !v.Ok {
+		errmsg["email"] = "email error"
+	}
 	//login_user_conn := orm.NewOrm()
 	//login_user_conn.Using("eva")
 	cond := orm.NewCondition()
@@ -23,25 +35,13 @@ func User_login(user *User, c *beego.Controller) bool {
 		return false
 	}
 	fmt.Println(n)
-	//if n == 1 {
-	//	for _, m := range maps {
-	//		if orm.ToStr(m["User_email"]) == user.User_email {
-	//			fmt.Println("66666666666666666666")
-	//			if orm.ToStr(m["User_password"]) == user.User_password {
-	//				fmt.Println(orm.ToStr(m["User_password"]))
-	//				fmt.Println("5555555555555555555555")
-	//				return true
-	//			}
-	//		}
 
-	//	}
-	//}
 	fmt.Println("5555555555555555555555")
 	if n == 1 {
-		err := login_user_conn.Raw("SELECT Id,User_name,User_address,User_password,User_created,User_update,User_company,User_want_to_be,User_really_is,User_project_json_path,User_email, name FROM user WHERE id = ?", user.User_email).QueryRow(user)
+		err := login_user_conn.Raw("SELECT Id,User_name,User_address,User_password,User_created,User_update,User_company,User_want_to_be,User_really_is,User_project_json_path,User_email FROM user WHERE User_email = ?", user.User_email).QueryRow(user)
 		fmt.Println(err)
 		if err != nil {
-			fmt.Println(user.Id)
+			fmt.Println(user.User_name)
 		}
 		return true
 	}
@@ -59,7 +59,7 @@ func User_login(user *User, c *beego.Controller) bool {
 }
 
 func User_logout(user *User, c *beego.Controller) {
-	c.Redirect("/home", 302)
+	c.Redirect("/login", 302)
 }
 
 func LoginUser(user *User, c *beego.Controller) {
@@ -108,28 +108,40 @@ func HasUser(user *User, username string) bool {
 }
 
 // verify username/email and password
-func VerifyUser(user *User, username, password string) (success bool) {
+func VerifyUser(username, email, password, passwordre string) (success bool, msg string) {
 	// search user by username or email
-	if HasUser(user, username) == false {
-		return
+	errmsg := make(map[string]string)
+	valid := validation.Validation{}
+
+	if v := valid.Required(username, "username"); !v.Ok {
+		errmsg["username"] = "username error"
+	} else if v := valid.MaxSize(username, 15, "username"); !v.Ok {
+		errmsg["username"] = "username error"
 	}
 
-	if VerifyPassword(password, user.User_password) {
-		// success
-		success = true
+	if v := valid.Required(password, "password"); !v.Ok {
+		errmsg["password"] = "password error"
 	}
-	return
+
+	if v := valid.Required(passwordre, "passwordre"); !v.Ok {
+		errmsg["passwordre"] = "passwordre error"
+	} else if password != passwordre {
+		errmsg["passwordre"] = "passwordre error"
+	}
+
+	if v := valid.Required(email, "email"); !v.Ok {
+		errmsg["email"] = "email error"
+	} else if v := valid.Email(email, "email"); !v.Ok {
+		errmsg["email"] = "email error"
+	}
+	if !VerifyPassword(password, passwordre) {
+		return false, "different password"
+	}
+	return true, "registed success"
 }
 
 // compare raw password and encoded password
-func VerifyPassword(rawPwd, encodedPwd string) bool {
+func VerifyPassword(rawPwd, Pwd string) bool {
 
-	// split
-	var salt, encoded string
-	if len(encodedPwd) > 11 {
-		salt = encodedPwd[:10]
-		encoded = encodedPwd[11:]
-	}
-
-	return utils.EncodePassword(rawPwd, salt) == encoded
+	return utils.EncodeMd5(Pwd) == utils.EncodeMd5(rawPwd)
 }

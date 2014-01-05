@@ -1,13 +1,11 @@
-package routers
+package personals
 
 import (
-	//	"Eva/models"
 	"fmt"
-	"github.com/astaxie/beego"
 )
 
 type HomeController struct {
-	beego.Controller
+	BaseController
 }
 
 func (this *HomeController) Get() {

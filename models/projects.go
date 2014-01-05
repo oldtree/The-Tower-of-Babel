@@ -13,8 +13,7 @@ func init() {
 
 //使用json数据格式保存项目工程文件，或者xml,在User table 里面保存对应的文件路径就可以
 type Project struct {
-	Id int64
-	//User_id         int64     `xorm:"index"`
+	Id              int64
 	User            *User     `orm:"rel(fk)"`
 	User_email      string    `orm:"size(30)"`
 	Project_created time.Time `orm:"auto_now_add"`

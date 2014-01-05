@@ -1,0 +1,11 @@
+package projects
+
+type ProjectsController struct {
+	BaseController
+}
+
+func (this *ProjectsController) Get() {
+	fmt.Println("进化者")
+	this.Data["title"] = "进化者"
+	this.TplNames = "home.html"
+}
