@@ -6,27 +6,20 @@
     <link href="../static/css/metro-bootstrap.css" rel="stylesheet">
     <link href="../static/css/metro-bootstrap-responsive.css" rel="stylesheet">
     <link href="../static/css/docs.css" rel="stylesheet">
-    <link href="../static/js/prettify/prettify.css" rel="stylesheet">
-
-    <!-- Load JavaScript Libraries -->
-    <script src="../static/js/jquery/jquery.min.js"></script>
-    <script src="../static/js/jquery/jquery.widget.min.js"></script>
-    <script src="../static/js/jquery/jquery.mousewheel.js"></script>
-    <script src="../static/js/prettify/prettify.js"></script>
-    <script src="../static/js/holder/holder.js"></script>
 
     <!-- Metro UI CSS JavaScript plugins -->
     <script src="../static/js/load-metro.js"></script>
 
     <!-- Local JavaScript -->
     <script src="../static/js/docs.js"></script>
-
+    <link rel="stylesheet" href="../../static/css/pure-min.css">
+    <link rel="stylesheet" href="../../static/css/home_layouts/blog.css">
 
     <title>{{.title}}</title>
 </head>
 <body class="metro"  style="background: url(static/img/clouds.jpg)">
-     <nav class="navigation-bar fixed-top">...</nav>
-    <!--<header class="bg-dark" data-load="static/header.html"></header>-->
+     <!--<nav class="navigation-bar fixed-top">EVA</nav>
+    <header class="bg-dark" data-load="static/header.html"></header>-->
 
     <div class="page">
         <div class="page-region">
@@ -37,50 +30,19 @@
                 </h1>
                 <p>Here is the new world !</p>
 		
-        <form id="UserLoginForm"  method = "Post">
-            <div class="grid">
-                <div class="row">
-                    <div class="span10">
-                        <table class="table striped">
-                            <tbody><tr>
-                                <td class="span4 text-right" style="vertical-align:middle"><strong>UserName:</strong></td>
-                                <td>
-                                    <div data-role="input-control" class="input-control text nbm">
-                                        <input name ="email" value="" type="text">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="span4 text-right" style="vertical-align:middle"><strong>Password:</strong></td>
-                                <td>
-                                    <div class="input-control password nbm" data-role="input-control">
-                                        <input name = "password" type="password">
-                                        <button class="btn-reveal" tabindex="-1" type="button"></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="span4 text-right" style="vertical-align:middle"></td>
-                                <td>
-                                    <div class="input-control checkbox" data-role="input-control">
-                                            <input checked="" type="checkbox">
-                                            <span class="check"></span>
-                                            Remember me
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                          <td class="span4 text-right" style="vertical-align:middle"></td>
-                                <td>
-                                    <input class="button" value="   登录   " type="submit" >
-                                    <input class="button1" value="   注册   " type="button" onClick="window.location.href='/register'">
-                                </td>
-                            </tr>
-                        </tbody></table>
-                    </div>
-                </div>
+
+	<div class="pure-u-1 form-box">
+            <div class="l-box">
+                <h2>Submit a Photo</h2>
+
+                <form id="UserLoginForm"  class="pure-form"  method = "Post">
+                    <input type="text" placeholder="useremail/username" required>
+                    <input type="text" placeholder="password" required>
+                    <button type="submit"  class="button">登录</button>
+			 <button type="button"   class="button1" onClick="window.location.href='/register'">注册</button>
+                </form>
             </div>
-        </form>
+        </div>
     
     </div>
 
