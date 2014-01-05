@@ -11,7 +11,7 @@ func init() {
 	orm.RegisterModel(new(Project))
 }
 
-//使用json数据格式保存项目工程文件，或者xml,在User table 里面保存对应的文件路径就可以
+//浣跨敤json鏁版嵁鏍煎紡淇濆瓨椤圭洰宸ョ▼鏂囦欢锛屾垨鑰厁ml,鍦║ser table 閲岄潰淇濆瓨瀵瑰簲鐨勬枃浠惰矾寰勫氨鍙互
 type Project struct {
 	Id              int64
 	User            *User     `orm:"rel(fk)"`

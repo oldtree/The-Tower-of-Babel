@@ -40,6 +40,7 @@ func User_login(user *User, c *beego.Controller) bool {
 	if n == 1 {
 		err := login_user_conn.Raw("SELECT Id,User_name,User_address,User_password,User_created,User_update,User_company,User_want_to_be,User_really_is,User_project_json_path,User_email FROM user WHERE User_email = ?", user.User_email).QueryRow(user)
 		fmt.Println(err)
+		fmt.Println(user.User_name)
 		if err != nil {
 			fmt.Println(user.User_name)
 		}
@@ -144,4 +145,8 @@ func VerifyUser(username, email, password, passwordre string) (success bool, msg
 func VerifyPassword(rawPwd, Pwd string) bool {
 
 	return utils.EncodeMd5(Pwd) == utils.EncodeMd5(rawPwd)
+}
+
+func Check_login() bool {
+	return true
 }

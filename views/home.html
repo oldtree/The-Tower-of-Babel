@@ -1,709 +1,176 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <link href="../static/css/metro-bootstrap.css" rel="stylesheet">
-    <link href="../static/css/metro-bootstrap-responsive.css" rel="stylesheet">
-    <link href="../static/css/docs.css" rel="stylesheet">
-    <link href="../static/js/prettify/prettify.css" rel="stylesheet">
-
-    <!-- Load JavaScript Libraries -->
-    <script src="../static/js/jquery/jquery.min.js"></script>
-    <script src="../static/js/jquery/jquery.widget.min.js"></script>
-    <script src="../static/js/jquery/jquery.mousewheel.js"></script>
-    <script src="../static/js/prettify/prettify.js"></script>
-
-    <!-- Local JavaScript -->
-    <script src="../static/js/metro/metro-loader.js"></script>
-    <!-- Local JavaScript -->
-    <script src="../static/js/docs.js"></script>
-    <script src="../static/js/github.info.js"></script>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="home page.">
     <title>{{.title}}</title>
+<link rel="stylesheet" href="../../static/css/pure-min.css">
+<link rel="stylesheet" href="../../static/css/home_layouts/blog.css">
 </head>
-<body class="metro">
-    <header class="bg-dark" data-load="../static/header.html"></header>
-    <div class="page" >
+<body>
+
+<div class="pure-g-r" id="layout">
+
+	<div class="sidebar pure-u">
+		<div id="header">
+			<div class="pure-menu pure-menu-open">
+				<a class="pure-menu-heading" >{{.username}}</a>
+				<a class="pure-menu-heading" >{{.useremail}}</a>
+				<ul>
+					<li><a href="/{{.username}}/home">个人主页</a></li>
+					<li><a href="/{{.username}}/home">好友动态</a></li>
+					<li><a href="/{{.username}}/home">个人项目</a></li>
+					<li><a href="/{{.username}}/home">好友项目</a></li>
+					<li><a href="/{{.username}}/home">参加的社群</a></li>
+					<li><a href="/{{.username}}/home">关注的社群</a></li>
+
+					<li class="pure-menu-selected menu-item-divided">
+						<a href="/{{.username}}/home">自己的生产统计</a>
+					</li>
+					<li><a href="/{{.username}}/home">社会公益项目</a></li>
+					<li><a href="/{{.username}}/home">社会公益项目</a></li>
+					<li><a href="/{{.username}}/home">社会公益项目</a></li>
+					<li><a href="/{{.username}}/home">社会公益项目</a></li>
+
+					<li class="menu-item-divided">
+						<a href="/{{.username}}/home">社会公益项目</a>
+					</li>
+					<li><a href="/{{.username}}/home">自己的生产统计</a></li>
+				</ul>
+			</div>
+		</div>
+    </div>
 	
-        <div class="page-region">
-            <div class="page-region-content">
-                <h1>
-                    <a href="/"><i class="icon-compass-2 fg-greener bigger"></i></a>
-                    Window of the world<small class="on-right"></small>
-                </h1>
+    <div class="pure-u-1">
+        <div class="content">
+            <!-- A wrapper for all the blog posts -->
+            <div class="posts">
+                <h1 class="content-subhead">Pinned Post</h1>
 
-                <div class="grid">
-                    <div class="row">
-                        <div class="span3">
-                            <nav>
-                                <ul class="side-menu">
-                                    <li><a href="#_checkbox">个人主页</a></li>
-                                    <li><a href="#_radio">好友动态</a></li>
-                                    <li><a href="#_switch">个人项目</a></li>
-                                    <li><a href="#_input">好友项目</a></li>
-                                    <li><a href="#_validation">参加的社群</a></li>
-                                    <li><a href="#_search">关注的社群</a></li>
-                                    <li><a href="#_plugin">自己的生产统计</a></li>
-                                    <li><a href="#_transform">社会公益项目</a></li>
-					                <li><a href="#_back_to_top">返回顶部</a></li>
-                                </ul>
-                            </nav>
-                        </div>
+                <!-- A single blog post -->
+                <section class="post">
+                    <header class="post-header">
+                        <img class="post-avatar" alt="Tilo Mitra&#x27;s avatar" height="48" width="48" src="../../static/img/clouds.jpg">
 
-                        <div class="span10">
-                            <p class="description">
-							<span style="font-size:30px;color:red;">
-                                 <code>珍惜你们的自由吧</code>
-							</span>
-                            </p>
+                        <h2 class="post-title">Introducing Pure</h2>
 
-                            <h3 class="box-title">Popular repositories</h3>
-        
-                            <h2 id="_default"><i class="icon-accessibility on-
-left"></i>Default styles</h2>
-                            <div class="example">
-                                <form>
-                                    <fieldset>
-                                        <legend>Legend</legend>
-                                        <lable>Label name</lable>
-                                        <div class="input-control text" data-role="input-
-control">
-                                            <input type="text" placeholder="type text">
-                                            <button class="btn-clear" tabindex="-
-1"></button>
-                                        </div>
-                                        <lable>Label name</lable>
-                                        <div class="input-control password" data-
-role="input-control">
-                                            <input type="password" placeholder="type 
-password" autofocus>
-                                            <button class="btn-reveal" tabindex="-
-1"></button>
-                                        </div>
-                                        <div class="input-control checkbox" data-
-role="input-control">
-                                            <label>
-                                                <input type="checkbox" checked />
-                                                <span class="check"></span>
-                                                Check me out
-                                            </label>
-                                        </div>
+                        <p class="post-meta">
+                            By <a href="#" class="post-author">Tilo Mitra</a> under <a class="post-category post-category-design" href="#">CSS</a> <a class="post-category post-category-pure" href="#">Pure</a>
+                        </p>
+                    </header>
 
-                                        <div>
-                                            <div class="input-control radio default-style" 
-data-role="input-control">
-                                                <label>
-                                                    <input type="radio" name="r1" checked 
-/>
-                                                    <span class="check"></span>
-                                                    R1
-                                                </label>
-                                            </div>
-                                            <div class="input-control radio  default-style" 
-data-role="input-control">
-                                                <label>
-                                                    <input type="radio" name="r1" />
-                                                    <span class="check"></span>
-                                                    R2
-                                                </label>
-                                            </div>
-                                        </div>
+                    <div class="post-description">
+                        <p>
+                            Yesterday at CSSConf, we launched Pure – a new CSS library. Phew! Here are the slides from the presentation . Although it looks pretty minimalist, we’ve been working on Pure for several months. After many iterations, we have released Pure as a set of small, responsive, CSS modules that you can use in every web project.
+                        </p>
+                    </div>
+                </section>
+            </div>
 
-                                        <input type="submit" value="Submit">
-                                    </fieldset>
-                                </form>
-                            </div>
+            <div class="posts">
+                <h1 class="content-subhead">Recent Posts</h1>
 
+                <section class="post">
+                    <header class="post-header">
+                        <img class="post-avatar" alt="Eric Ferraiuolo&#x27;s avatar" height="48" width="48" src="../../static/img/clouds2.png">
 
+                        <h2 class="post-title">Everything You Need to Know About Grunt</h2>
 
-                            <h2 id="_checkbox"><i class="icon-accessibility on-
-left"></i>Checkboxes</h2>
-                            <p class="description">
+                        <p class="post-meta">
+                            By <a class="post-author" href="#">Eric Ferraiuolo</a> under <a class="post-category post-category-js" href="#">JavaScript</a>
+                        </p>
+                    </header>
 
-                            </p>
-                            <div class="example">
-                                <div class="input-control checkbox margin10" data-
-role="input-control">
-                                    <label>
-                                        <input type="checkbox" />
-                                        <span class="check"></span>
-                                        Check me out
-                                    </label>
-                                </div>
+                    <div class="post-description">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                    </div>
+                </section>
 
-                                <div class="input-control checkbox margin10" data-
-role="input-control">
-                                    <label>
-                                        <input type="checkbox" checked/>
-                                        <span class="check"></span>
-                                        Check me out
-                                    </label>
-                                </div>
+                <section class="post">
+                    <header class="post-header">
+                        <img class="post-avatar" alt="Reid Burke&#x27;s avatar" height="48" width="48" src="../../static/img/clouds2.png">
 
-                                <div class="input-control checkbox margin10" data-
-role="input-control">
-                                    <label>
-                                        Check me out
-                                        <input type="checkbox" disabled/>
-                                        <span class="check"></span>
-                                    </label>
-                                </div>
+                        <h2 class="post-title">Photos from CSSConf and JSConf</h2>
 
-                                <div class="input-control checkbox margin10" data-
-role="input-control">
-                                    <label>
-                                        Check me out
-                                        <input type="checkbox" disabled checked/>
-                                        <span class="check"></span>
-                                    </label>
-                                </div>
+                        <p class="post-meta">
+                            By <a class="post-author" href="#">Reid Burke</a> under <a class="post-category" href="#">Uncategorized</a>
+                        </p>
+                    </header>
 
-                                <div class="input-control checkbox margin10" data-
-role="input-control">
-                                    <label>
-                                        Intermediate
-                                        <input type="checkbox" data-show="intermediate"/>
-                                        <span class="check"></span>
-                                    </label>
-                                </div>
+                    <div class="post-description">
+                        <div class="post-images pure-g-r">
+                            <div class="pure-u-1-2">
+                                <a href="http://www.flickr.com/photos/uberlife/8915936174/">
+                                    <img alt="Photo of someone working poolside at a resort"
+                                         src="../../static/img/tiles-bg.jpg">
+                                </a>
 
-                                <div class="input-control checkbox margin10" data-
-role="input-control">
-                                    <label>
-                                        Intermediate
-                                        <input type="checkbox" data-show="intermediate" 
-disabled/>
-                                        <span class="check"></span>
-                                    </label>
+                                <div class="post-image-meta">
+                                    <h3>CSSConf Photos</h3>
                                 </div>
                             </div>
-<pre class="prettyprint linenums">
-&lt;div class="input-control checkbox"&gt;
-    &lt;label&gt;
-        &lt;input type="checkbox" /&gt;
-        &lt;span class="check"&gt;&lt;/span&gt;
-        Check me out
-    &lt;/label&gt;
-&lt;/div&gt;
 
-&lt;div class="input-control checkbox"&gt;
-    &lt;label&gt;
-        &lt;input type="checkbox" data-show="intermediate" /&gt;
-        &lt;span class="check"&gt;&lt;/span&gt;
-        Check me out
-    &lt;/label&gt;
-&lt;/div&gt;
-</pre>
+                            <div class="pure-u-1-2">
+                                <a href="http://www.flickr.com/photos/uberlife/8907351301/">
+                                    <img alt="Photo of the sunset on the beach"
+                                         src="../../static/img/tiles-bg-2.jpg">
+                                </a>
 
-                            <h2 id="_radio"><i class="icon-accessibility on-left"></i>Radio 
-buttons</h2>
-                            <div class="example">
-                                <div class="input-control radio margin10" data-
-role="input-control">
-                                    <label>
-                                        Check me out
-                                        <input type="radio" name="r1" checked />
-                                        <span class="check"></span>
-                                    </label>
-                                </div>
-                                <div class="input-control radio margin10" data-
-role="input-control">
-                                    <label>
-                                        Check me out
-                                        <input type="radio" name="r1" />
-                                        <span class="check"></span>
-                                    </label>
-                                </div>
-                                <div class="input-control radio margin10" data-
-role="input-control">
-                                    <label>
-                                        Check me out
-                                        <input type="radio" name="r1" disabled/>
-                                        <span class="check"></span>
-                                    </label>
-                                </div>
-                                <div class="input-control radio margin10" data-
-role="input-control">
-                                    <label>
-                                        Check me out
-                                        <input type="radio" name="r2" disabled checked />
-                                        <span class="check"></span>
-                                    </label>
-                                </div>
-
-                                <div class="input-control radio default-style margin10" 
-data-role="input-control">
-                                    <label>
-                                        Check me out
-                                        <input type="radio" name="r3" checked />
-                                        <span class="check"></span>
-                                    </label>
-                                </div>
-                                <div class="input-control radio default-style margin10" 
-data-role="input-control">
-                                    <label>
-                                        Check me out
-                                        <input type="radio" name="r3" />
-                                        <span class="check"></span>
-                                    </label>
-                                </div>
-                                <div class="input-control radio default-style margin10" 
-data-role="input-control">
-                                    <label>
-                                        Check me out
-                                        <input type="radio" name="r3" disabled/>
-                                        <span class="check"></span>
-                                    </label>
-                                </div>
-                                <div class="input-control radio default-style margin10" 
-data-role="input-control">
-                                    <label>
-                                        Check me out
-                                        <input type="radio" name="r4" disabled checked />
-                                        <span class="check"></span>
-                                    </label>
+                                <div class="post-image-meta">
+                                    <h3>JSConf Photos</h3>
                                 </div>
                             </div>
-<pre class="prettyprint linenums">
-&lt;div class="input-control radio"&gt;
-    &lt;label&gt;
-        &lt;input type="radio" /&gt;
-        &lt;span class="check"&gt;&lt;/span&gt;
-        Check me out
-    &lt;/label&gt;
-&lt;/div&gt;
-
-&lt;div class="input-control radio default-style"&gt;
-    &lt;label&gt;
-        &lt;input type="radio" /&gt;
-        &lt;span class="check"&gt;&lt;/span&gt;
-        Check me out
-    &lt;/label&gt;
-&lt;/div&gt;
-</pre>
-
-                            <h2 id="_switch"><i class="icon-accessibility on-
-left"></i>Switch control</h2>
-                            <div class="example">
-                                <div class="input-control switch margin10" data-
-role="input-control">
-                                    <label>
-                                        Switch me
-                                        <input type="checkbox" checked/>
-                                        <span class="check"></span>
-                                    </label>
-                                </div>
-
-                                <div class="input-control switch margin10" data-
-role="input-control">
-                                    <label>
-                                        Switch me
-                                        <input type="checkbox"/>
-                                        <span class="check"></span>
-                                    </label>
-                                </div>
-
-                                <div class="input-control switch margin10" data-
-role="input-control">
-                                    <label>
-                                        Switch me
-                                        <input type="checkbox" disabled/>
-                                        <span class="check"></span>
-                                    </label>
-                                </div>
-
-                                <div class="input-control switch margin10" data-
-role="input-control">
-                                    <label>
-                                        Switch me
-                                        <input type="checkbox" disabled checked/>
-                                        <span class="check"></span>
-                                    </label>
-                                </div>
-                            </div>
-<pre class="prettyprint linenums">
-&lt;div class="input-control switch"&gt;
-    &lt;label&gt;
-        &lt;input type="checkbox" /&gt;
-        &lt;span class="check"&gt;&lt;/span&gt;
-    &lt;/label&gt;
-&lt;/div&gt;
-</pre>
-
-                            <h2 id="_input"><i class="icon-accessibility on-left"></i>Input 
-controls</h2>
-                            <h3>Input text</h3>
-                            <div class="example">
-                                <form>
-                                    <div class="input-control text" data-role="input-
-control">
-                                        <input type="text" value="" placeholder="input 
-text"/>
-                                        <button class="btn-clear"></button>
-                                    </div>
-                                    <br />
-                                    <div class="input-control text" data-role="input-
-control">
-                                        <input type="text" value="disabled input" 
-disabled/>
-                                        <button class="btn-clear"></button>
-                                    </div>
-                                </form>
-                            </div>
-<pre class="prettyprint linenums">
-&lt;div class="input-control text"&gt;
-    &lt;input type="text" value="" placeholder="input text"/&gt;
-    &lt;button class="btn-clear"&gt;&lt;/button&gt;
-&lt;/div&gt;
-
-&lt;div class="input-control text"&gt;
-    &lt;input type="text" value="" placeholder="input text" disabled/&gt;
-    &lt;button class="btn-clear"&gt;&lt;/button&gt;
-&lt;/div&gt;
-</pre>
-                            <p class="description">
-                                Metro UI CSS also supported one style for all types of 
-input controls, such as <code>tel</code>, <code>email</code>, <code>url</code>, ...
-                            </p>
-
-                            <h3>Input password</h3>
-                            <div class="example">
-                                <form>
-                                    <div class="input-control password" data-role="input-
-control">
-                                        <input type="password" value="" placeholder="input 
-password"/>
-                                        <button class="btn-reveal"></button>
-                                    </div>
-                                </form>
-                            </div>
-<pre class="prettyprint linenums">
-&lt;div class="input-control password"&gt;
-    &lt;input type="password" value="" placeholder="input password"/&gt;
-    &lt;button class="btn-reveal"&gt;&lt;/button&gt;
-&lt;/div&gt;
-</pre>
-
-                            <h3>Select</h3>
-                            <div class="example">
-                                <form>
-                                    <div class="input-control select" data-role="input-
-control">
-                                        <select>
-                                            <option>Value 1</option>
-                                            <option>Value 2</option>
-                                            <option>Value 3</option>
-                                        </select>
-                                    </div>
-                                    <br />
-                                    <div class="input-control select" data-role="input-
-control">
-                                        <select multiple>
-                                            <option>Value 1</option>
-                                            <option>Value 2</option>
-                                            <option>Value 3</option>
-                                            <option>Value 3</option>
-                                        </select>
-                                    </div>
-                                </form>
-                            </div>
-<pre class="prettyprint linenums">
-&lt;div class="input-control select"&gt;
-    &lt;select&gt;
-        &lt;option&gt;Value 1&lt;/option&gt;
-        &lt;option&gt;Value 2&lt;/option&gt;
-        &lt;option&gt;Value 3&lt;/option&gt;
-    &lt;/select&gt;
-&lt;/div&gt;
-
-&lt;div class="input-control select"&gt;
-    &lt;select multiple&gt;
-        &lt;option&gt;Value 1&lt;/option&gt;
-        &lt;option&gt;Value 2&lt;/option&gt;
-        &lt;option&gt;Value 3&lt;/option&gt;
-    &lt;/select&gt;
-&lt;/div&gt;
-</pre>
-
-                            <h3>Textarea</h3>
-                            <div class="example">
-                                <form>
-                                    <div class="input-control textarea" data-role="input-
-control">
-                                        <textarea></textarea>
-                                    </div>
-                                </form>
-                            </div>
-<pre class="prettyprint linenums">
-&lt;div class="input-control textarea"&gt;
-    &lt;textarea&gt;...&lt;/textarea&gt;
-&lt;/div&gt;
-</pre>
-
-                            <h3>Input with spanN class</h3>
-                            <p class="description">
-                                Use <code>.span1</code> to <code>.span12</code> for 
-<code>.input-control</code> that match the same sizes of the grid columns.
-                            </p>
-                            <div class="example">
-                                <form class="clearfix">
-                                    <h4>As block</h4>
-                                    <div class="input-control text span1 block" data-
-role="input-control">
-                                        <input type="text" placeholder="span1">
-                                    </div>
-                                    <div class="input-control text span2 block" data-
-role="input-control">
-                                        <input type="text" placeholder="span2">
-                                    </div>
-                                    <div class="input-control text span3 block" data-
-role="input-control">
-                                        <input type="text" placeholder="span3">
-                                    </div>
-                                    <div class="input-control text span4 block" data-
-role="input-control">
-                                        <input type="text" placeholder="span3">
-                                    </div>
-
-                                    <h4>As inline-block</h4>
-                                    <div class="input-control text span1" data-
-role="input-control">
-                                        <input type="text" placeholder="span1">
-                                    </div>
-                                    <div class="input-control text span2" data-
-role="input-control">
-                                        <input type="text" placeholder="span2">
-                                    </div>
-                                    <div class="input-control text span3" data-
-role="input-control">
-                                        <input type="text" placeholder="span3">
-                                    </div>
-                                </form>
-
-                                <form>
-                                    <h4>In grid</h4>
-                                    <div class="grid">
-                                        <div class="row">
-                                            <div class="span2">
-                                                <div class="input-control text span2" 
-data-role="input-control">
-                                                    <input type="text" placeholder="span2">
-                                                </div>
-                                            </div>
-                                            <div class="span2">
-                                                <div class="input-control text span2" 
-data-role="input-control">
-                                                    <input type="text" placeholder="span2">
-                                                </div>
-                                            </div>
-                                            <div class="span2">
-                                                <div class="input-control text span2" 
-data-role="input-control">
-                                                    <input type="text" placeholder="span2">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-<pre class="prettyprint linenums">
-&lt;div class="input-control text span2"&gt;
-    &lt;input type="text" /&gt;
-&lt;/div&gt;
-</pre>
-
-                            <h3 id="_validation">Input validation states</h3>
-                            <p class="description">
-                                You can set validation state for input with build-in 
-classes as additional class for <code>.input-control</code>: <code>.warning-state</code>, 
-<code>.error-state</code>, <code>.info-state</code>, <code>.success-state</code>.
-                                <br />Also, you can set <code>data-state</code> attribute 
-for <code>input</code>, <code>select</code> or <code>textarea</code> with next values: 
-<code>warning</code>, <code>error</code>, <code>info</code> and <code>success</code>.
-                            </p>
-                            <div class="example">
-                                <form>
-                                    <h3>Inputs</h3>
-                                    <div class="input-control text warning-state" data-
-role="input-control">
-                                        <input type="text" value="warning state">
-                                    </div>
-
-                                    <div class="input-control text error-state" data-
-role="input-control">
-                                        <input type="text" value="error state">
-                                    </div>
-
-                                    <div class="input-control text info-state" data-
-role="input-control">
-                                        <input type="text" value="info state">
-                                    </div>
-
-                                    <div class="input-control text" data-role="input-
-control">
-                                        <input type="text" value="success state" data-
-state="success">
-                                    </div>
-
-                                    <h3>Select, file, textarea</h3>
-                                    <div class="input-control select error-state" data-
-role="input-control">
-                                        <select name="s1">
-                                            <option value="1">Value 1</option>
-                                            <option value="2">Value 2</option>
-                                            <option value="3">Value 3</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="input-control file info-state" data-
-role="input-control">
-                                        <input type="file">
-                                        <button class="btn-file"></button>
-                                    </div>
-
-                                    <div class="input-control textarea success-state" 
-data-role="input-control">
-                                        <textarea></textarea>
-                                    </div>
-                                </form>
-                            </div>
-<pre class="prettyprint linenums">
-&lt;div class="input-control text warning-state"&gt;
-    &lt;input type="text" /&gt;
-&lt;/div&gt;
-
-&lt;div class="input-control text"&gt;
-    &lt;input type="text" data-state="success"/&gt;
-&lt;/div&gt;
-</pre>
-
-                            <!--
-                            <h3>Invalid input</h3>
-                            <p class="description">
-                                Style inputs via default browser functionality with 
-<code>:invalid</code>. Specify a type, add the <code>required</code> attribute if the field 
-is not optional, and (if applicable) specify a <code>pattern</code>.
-                            </p>
-                            <p class="description tertiary-text fg-red">
-                                This is not available in versions of Internet Explorer < 10 
-due to lack of support for CSS pseudo selectors.
-                            </p>
-                            <div class="example">
-                                <form>
-                                    <div class="input-control text" data-role="input-
-control">
-                                        <input type="email" placeholder="test@example.com" 
-required>
-                                    </div>
-                                </form>
-                            </div>
-<pre class="prettyprint linenums">
-&lt;div class="input-control text"&gt;
-    &lt;input type="email" required /&gt;
-&lt;/div&gt;
-</pre>
-                            <p class="description">
-                                You can combine functionality <code>:invalid</code> with 
-<code>state classes</code>.
-                            </p>
-                            <div class="example">
-                                <form>
-                                    <div class="input-control text success-state" data-
-role="input-control">
-                                        <input type="email" placeholder="test@example.com" 
-required>
-                                    </div>
-                                </form>
-                            </div>
-<pre class="prettyprint linenums">
-&lt;div class="input-control text success-state"&gt;
-    &lt;input type="email" required /&gt;
-&lt;/div&gt;
-</pre>
--->
-                            <h3 id="_search">Search form</h3>
-                            <div class="example">
-                                <form>
-                                    <div class="input-control text" data-role="input-
-control">
-                                        <input type="text">
-                                        <button class="btn-search"></button>
-                                    </div>
-                                </form>
-                            </div>
-<pre class="prettyprint linenums">
-&lt;div class="input-control text"&gt;
-    &lt;input type="text" /&gt;
-    &lt;button class="btn-search"&gt;&lt;/button&gt;
-&lt;/div&gt;
-</pre>
-
-                            <h3 id="_file">Input file</h3>
-                            <div class="example">
-                                <form>
-                                    <div class="input-control file" data-role="input-
-control">
-                                        <input type="file">
-                                        <button class="btn-file"></button>
-                                    </div>
-                                </form>
-                            </div>
-<pre class="prettyprint linenums">
-&lt;div class="input-control file"&gt;
-    &lt;input type="file" /&gt;
-    &lt;button class="btn-file"&gt;&lt;/button&gt;
-&lt;/div&gt;
-</pre>
-
-                            <h2 id="_plugin">Input control plugin</h2>
-                            <p class="description">
-                                Input control plugin <code>metro-input-control.js</code> 
-provides functionality for clearing inputs, show password and input file.
-                            </p>
-
-                            <h2 id="_transform">Input Auto Transform</h2>
-                            <p class="description">
-                                Now input control plugin contains widget for form input 
-<strong>auto</strong> transformation.
-                            </p>
-<pre class="prettyprint linenums">
-from:
-&lt;input type="file" data-transform="input-control" /&gt;
-
-to:
-&lt;div class="input-control file"&gt;
-    &lt;input type="file" /&gt;
-    &lt;button class="btn-file"&gt;&lt;/button&gt;
-&lt;/div&gt;
-</pre>
-                        <p>Now supported:</p>
-<pre class="prettyprint linenums">
-&lt;input type="text" data-transform="input-control" /&gt;
-&lt;input type="password" data-transform="input-control" /&gt;
-&lt;input type="file" data-transform="input-control" /&gt;
-&lt;input type="email" data-transform="input-control" /&gt;
-&lt;input type="tel" data-transform="input-control" /&gt;
-&lt;input type="checkbox" data-transform="input-control" /&gt;
-&lt;input type="checkbox" data-transform="input-control" data-transform-type="switch" /&gt;
-&lt;input type="radio" data-transform="input-control" /&gt;
-&lt;select data-transform="input-control" /&gt;
-&lt;textarea data-transform="input-control" /&gt;
-</pre>
-
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                </section>
 
-        <div class="page-footer">
-            <div class="page-footer-content">
-                <!--<div data-load="header.html"></div>-->
+                <section class="post">
+                    <header class="post-header">
+                        <img class="post-avatar" alt="Andrew Wooldridge&#x27;s avatar" height="48" width="48" src="../../static/img/jeki_chan.jpg">
+
+                        <h2 class="post-title">YUI 3.10.2 Released</h2>
+
+                        <p class="post-meta">
+                            By <a class="post-author" href="#">Andrew Wooldridge</a> under <a class="post-category post-category-yui" href="#">YUI</a>
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        <p>
+                            We are happy to announce the release of YUI 3.10.2! You can find it now on the Yahoo! CDN, download it directly, or pull it in via npm. We’ve also updated the YUI Library website with the latest documentation.
+                        </p>
+                    </div>
+                </section>
+				
             </div>
+
+            <footer class="footer">
+                <div class="pure-menu pure-menu-horizontal pure-menu-open">
+                    <ul>
+                        <li><a href="/{{.username}}/home">About</a></li>
+                        <li><a href="/{{.username}}/home">Twitter</a></li>
+                        <li><a href="/{{.username}}/home">Github</a></li>
+                    </ul>
+                </div>
+            </footer>
+			
         </div>
     </div>
+</div>
 
-    <script src="js/hitua.js"></script>
+<script src="../../static/js/yui.js"></script>
+<script>
+YUI().use('node-base', 'node-event-delegate', function (Y) {
+    // This just makes sure that the href="#" attached to the <a> elements
+    // don't scroll you back up the page.
+    Y.one('body').delegate('click', function (e) {
+        e.preventDefault();
+    }, 'a[href="#"]');
+});
+</script>
 
 </body>
 </html>

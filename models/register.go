@@ -47,6 +47,9 @@ func RegisterUser(user *User, form RegisterForm) error {
 	user.User_name = form.UserName
 	user.User_email = form.Email
 	fmt.Println(form.UserName)
+	fmt.Println(form.Password)
+	fmt.Println(form.Email)
+	fmt.Println("RegisterUser finished ")
 	return user.Insert()
 }
 func CanRegistered(userName string, email string) (bool, bool, error) {
