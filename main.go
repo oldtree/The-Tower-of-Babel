@@ -5,6 +5,7 @@ import (
 	"Eva1/common_layer"
 	"Eva1/routers"
 	"Eva1/routers/personals"
+	"Eva1/routers/projects"
 	"Eva1/utils"
 	"fmt"
 	"github.com/astaxie/beego"
@@ -40,13 +41,13 @@ func init_login_routers() {
 }
 
 func init_user_home_routers() {
-	beego.Router("/:id([A-z]+|[0-9]+)/home", &personals.HomeController{}, "get:Get;post:Post")
-	beego.Router("/:id([A-z]+|[0-9]+)/edit_self", &personals.HomeController{}, "get:Get;post:Post;put:Put;delete:Delete")
+	beego.Router("/:id([A-z]+|[0-9]+)/home", &personals.HomeController{}, "get:Get;post:Post;put:Put;delete:Delete")
+	beego.Router("/:id([A-z]+|[0-9]+)/edit_self", &personals.EditController{}, "get:Get;post:Post;put:Put;delete:Delete")
 }
 
 func init_user_project_routers() {
-	beego.Router("/:id([A-z]+)/home", &personals.HomeController{}, "get:Get;post:Post")
-	beego.Router("/:id([A-z]+)/edit_self", &personals.HomeController{}, "get:Get;post:Post;put:Put;delete:Delete")
+	beego.Router("/:id([A-z]+)/projects", &projects.ProjectsController{}, "get:Get;post:Post")
+	beego.Router("/:id([A-z]+)/edit_self", &projects.ProjectsController{}, "get:Get;post:Post;put:Put;delete:Delete")
 }
 
 func main() {

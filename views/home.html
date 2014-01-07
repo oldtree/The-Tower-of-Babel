@@ -23,7 +23,6 @@
 	
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="home page.">
-    <title>{{.title}}</title>
 <link rel="stylesheet" href="../../static/css/pure-min.css">
 <link rel="stylesheet" href="../../static/css/home_layouts/blog.css">
 </head>
@@ -34,27 +33,24 @@
 	<div class="sidebar pure-u">
 		<div id="header">
 			<div class="pure-menu pure-menu-open">
-				<a class="pure-menu-heading" >{{.username}}</a>
+				<a class="pure-menu-heading" href="#">{{.username}}</a>
 				<i class="icon-rocket on-left"></i>START
-				<a class="pure-menu-heading" >{{.useremail}}</a>
+				<a class="pure-button" href="/{{.username}}/edit_self">{{.useremail}}</a>
 				<ul>
 					<li><a href="/{{.username}}/home">个人主页</a></li>
-					<li><a href="/{{.username}}/home">好友动态</a></li>
-					<li><a href="/{{.username}}/home">个人项目</a></li>
-					<li><a href="/{{.username}}/home">好友项目</a></li>
-					<li><a href="/{{.username}}/home">参加的社群</a></li>
-					<li><a href="/{{.username}}/home">关注的社群</a></li>
+					<li><a href="/{{.username}}/friends">好友动态</a></li>
+					<li><a href="/{{.username}}/projects">个人项目</a></li>
+					<li><a href="/{{.username}}/friends_projects">好友项目</a></li>
+					<li><a href="/{{.username}}/socity_joined">参加的社群</a></li>
+					<li><a href="/{{.username}}/socity_concern">关注的社群</a></li>
 
 					<li class="pure-menu-selected menu-item-divided">
-						<a href="/{{.username}}/home">自己的生产统计</a>
+						<a href="/{{.username}}/production_statistics">自己的生产统计</a>
 					</li>
-					<li><a href="/{{.username}}/home">社会公益项目</a></li>
-					<li><a href="/{{.username}}/home">社会公益项目</a></li>
-					<li><a href="/{{.username}}/home">社会公益项目</a></li>
-					<li><a href="/{{.username}}/home">社会公益项目</a></li>
+					<li><a href="/{{.username}}/projects/statistics">项目统计</a></li>
 
 					<li class="menu-item-divided">
-						<a href="/{{.username}}/home">社会公益项目</a>
+						<a href="/{{.username}}/home">社会公益项目统计</a>
 					</li>
 					<li><a href="/{{.username}}/home">自己的生产统计</a></li>
 				</ul>

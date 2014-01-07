@@ -41,6 +41,10 @@ func (this *MainController) Post() {
 		this.Ctx.SetCookie("user_name", user_info.User_name)
 		this.Ctx.SetCookie("user_email", user_info.User_email)
 		this.Ctx.SetCookie("user_login", "true")
+		fmt.Println("begin info ")
+		fmt.Println(user_info.User_name)
+		fmt.Println(user_info.User_email)
+		fmt.Println("end info ")
 		this.Redirect(path, 302)
 	}
 

@@ -1,5 +1,9 @@
 package projects
 
+import (
+	"fmt"
+)
+
 type ProjectsController struct {
 	BaseController
 }
@@ -7,5 +11,5 @@ type ProjectsController struct {
 func (this *ProjectsController) Get() {
 	fmt.Println("进化者")
 	this.Data["title"] = "进化者"
-	this.TplNames = "home.html"
+	this.TplNames = "test.html"
 }
