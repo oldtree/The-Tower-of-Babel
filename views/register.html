@@ -1,70 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-
-    <meta charset="utf-8">
-    <link href="../static/css/metro-bootstrap.css" rel="stylesheet">
-    <link href="../static/css/metro-bootstrap-responsive.css" rel="stylesheet">
-    <link href="../static/css/docs.css" rel="stylesheet">
-    <link href="../static/js/prettify/prettify.css" rel="stylesheet">
-
-    <!-- Load JavaScript Libraries -->
-    <script src="../static/js/jquery/jquery.min.js"></script>
-    <script src="../static/js/jquery/jquery.widget.min.js"></script>
-    <script src="../static/js/jquery/jquery.mousewheel.js"></script>
-    <script src="../static/js/prettify/prettify.js"></script>
-
-    <!-- Local JavaScript -->
-    <script src="../static/js/metro/metro-loader.js"></script>
-    <!-- Local JavaScript -->
-    <script src="../static/js/docs.js"></script>
-    <script src="../static/js/github.info.js"></script>
+       <meta charset="utf-8">
+       <link rel="stylesheet" href="../static/css/pure-min.css">
+	<link rel="stylesheet" href="../static/css/gallery.css">
+	<link href="../static/Flat-UI-master/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="../static/Flat-UI-master/bootstrap/css/prettify.css" rel="stylesheet">
+	<link href="../static/Flat-UI-master/css/flat-ui.css" rel="stylesheet">
+	<link href="../static/Flat-UI-master/css/docs.css" rel="stylesheet">
     <title>{{.title}}</title>
 </head>
-<body class="metro" >
-    <!--<header class="bg-dark" data-load="static/header.html"></header>-->
-    <header class="bg-dark" data-load="../static/header.html"></header>
-    <div class="page">
-        <div class="page-region">
-            <div class="page-region-content">
-                <h1>
-                    <a href="/"><i class="icon-arrow-right-3 fg-blue smaller"></i></a>
-                    Start<small class="on-right"></small>
-                </h1>
-                <p>Here is the new world !</p>
-		            <i class="icon-accessibility on-left"></i>Default styles
-                           
-                                <form id="RegisterForm" method="Post" action="/register">
-                                    <fieldset>
-                                        <legend>Legend</legend>
-                                        <lable>User Name</lable>
-                                        <div class="input-control text" data-role="input-control" >
-                                            <input name = "name" placeholder="type text" type="text">
-                                            <button type="button" class="btn-clear" tabindex="1"></button>
-                                        </div>
-						<lable>User Email</lable>
-                                        <div class="input-control text" data-role="input-control">
-                                             <input name = "email" placeholder="type text" type="text">
-                                            <button type="button" class="btn-clear" tabindex="2"></button>
-                                        </div>
-                                        <lable>PassWord</lable>
-                                        <div class="input-control password" data-role="input-control">
-                                            <input name = "password" placeholder="type password" autofocus="" type="password">
-                                            <button type="button" class="btn-reveal" tabindex="3"></button>
-                                        </div>
-										<lable>PassWordre</lable>
-                                        <div class="input-control password" data-role="input-control">
-                                            <input name = "passwordre" placeholder="type password" autofocus="" type="password">
-                                            <button type="button" class="btn-reveal" tabindex="4"></button>
-                                        </div>
-                                        <input value="Submit" type="submit" >
-                                    </fieldset>
-                                </form>
-    
-    </div>
+<body >
+<div class="container">
 
-    <!--<script src="static/js/hitua.js"></script>-->
+          
+        <div class="my-login-screen">
 
+          <div class="login-form">
+            <div class="form-group">
+              <input class="form-control login-field" value="" placeholder="Enter your name" id="name" type="text">
+              <label class="login-field-icon fui-user" for="name"></label>
+            </div>
+           <div class="form-group">
+              <input class="form-control login-field" value="" placeholder="Enter your email" id="email" type="text">
+              <label class="login-field-icon fui-mail" for="email"></label>
+            </div>
+            <div class="form-group">
+              <input class="form-control login-field" value="" placeholder="Password" id="password" type="password">
+              <label class="login-field-icon fui-lock" for="Password"></label>
+            </div>
+           <div class="form-group">
+              <input class="form-control login-field" value="" placeholder="Passwordre" id="Passwordre" type="password">
+              <label class="login-field-icon fui-lock" for="Passwordre"></label>
+            </div>
+		     <button type="submit" class="pure-button" method="Post" >Register</button>
+          </div>
+        </div>
+      
+</div>       
 </body>
 </html>

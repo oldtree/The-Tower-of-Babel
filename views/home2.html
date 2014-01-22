@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <title>{{.title}}</title>
+
+    <meta charset="utf-8">
+	
+    <link href="../../static/css/metro-bootstrap.css" rel="stylesheet">
+    <link href="../../static/css/metro-bootstrap-responsive.css" rel="stylesheet">
+
+
+
+    <!-- Load JavaScript Libraries -->
+    <script src="../../static/js/jquery/jquery.min.js"></script>
+    <script src="../../static/js/jquery/jquery.widget.min.js"></script>
+    <script src="../../static/js/jquery/jquery.mousewheel.js"></script>
+    <script src="../../static/js/prettify/prettify.js"></script>
+
+    <!-- Local JavaScript -->
+    <script src="../../static/js/metro/metro-loader.js"></script>
+
+	
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="home page.">
+<link rel="stylesheet" href="../../static/css/pure.css">
+<link rel="stylesheet" href="../../static/css/home_layouts/blog.css">
+</head>
+<body>
+
+<div class="pure-g-r" id="layout">
+
+	<div class="sidebar pure-u">
+		<div id="header">
+			<div class="pure-menu pure-menu-open">
+				<a class="pure-menu-heading" href="#">{{.username}}</a>
+				<i class="icon-rocket on-left"></i>START
+				<a class="pure-button" href="/{{.username}}/edit_self">{{.useremail}}</a>
+				<ul>
+                                <li><a href="/explorer">个人主页</a></li>
+					<li><a href="/{{.username}}/home">个人主页</a></li>
+					<li><a href="/{{.username}}/friends">好友动态</a></li>
+					<li><a href="/{{.username}}/projects">个人项目</a></li>
+					<li><a href="/{{.username}}/friends_projects">好友项目</a></li>
+					<li><a href="/{{.username}}/socity_joined">参加的社群</a></li>
+					<li><a href="/{{.username}}/socity_concern">关注的社群</a></li>
+
+					<li class="pure-menu-selected menu-item-divided">
+						<a href="/{{.username}}/production_statistics">自己的生产统计</a>
+					</li>
+					<li><a href="/{{.username}}/projects/statistics">项目统计</a></li>
+
+					<li class="menu-item-divided">
+						<a href="/{{.username}}/home">社会公益项目统计</a>
+					</li>
+					<li><a href="/{{.username}}/home">自己的生产统计</a></li>
+				</ul>
+			</div>
+		</div>
+    </div>
+	
+    <div class="pure-u-1">
+        <div class="content">
+            <!-- A wrapper for all the blog posts -->
+            <div class="posts">
+                <h1 class="content-subhead">Pinned Post</h1>
+
+                <!-- A single blog post -->
+                <section class="post">
+                    <header class="post-header">
+                        <img class="post-avatar" alt="Tilo Mitra&#x27;s avatar" height="48" width="48" src="../../static/img/clouds.jpg">
+
+                        <h2 class="post-title">Introducing Pure</h2>
+
+                        <p class="post-meta">
+                            By <a href="#" class="post-author">Tilo Mitra</a> under <a class="post-category post-category-design" href="#">CSS</a> <a class="post-category post-category-pure" href="#">Pure</a>
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        <p>
+                            Yesterday at CSSConf, we launched Pure – a new CSS library. Phew! Here are the slides from the presentation . Although it looks pretty minimalist, we’ve been working on Pure for several months. After many iterations, we have released Pure as a set of small, responsive, CSS modules that you can use in every web project.
+                        </p>
+                    </div>
+                </section>
+            </div>
+
+            <div class="posts">
+                <h1 class="content-subhead">Recent Posts</h1>
+
+                <section class="post">
+                    <header class="post-header">
+                        <img class="post-avatar" alt="Eric Ferraiuolo&#x27;s avatar" height="48" width="48" src="../../static/img/clouds2.png">
+
+                        <h2 class="post-title">Everything You Need to Know About Grunt</h2>
+
+                        <p class="post-meta">
+                            By <a class="post-author" href="#">Eric Ferraiuolo</a> under <a class="post-category post-category-js" href="#">JavaScript</a>
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="post">
+                    <header class="post-header">
+                        <img class="post-avatar" alt="Reid Burke&#x27;s avatar" height="48" width="48" src="../../static/img/clouds2.png">
+
+                        <h2 class="post-title">Photos from CSSConf and JSConf</h2>
+
+                        <p class="post-meta">
+                            By <a class="post-author" href="#">Reid Burke</a> under <a class="post-category" href="#">Uncategorized</a>
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        <div class="post-images pure-g-r">
+                            <div class="pure-u-1-2">
+                                <a href="http://www.flickr.com/photos/uberlife/8915936174/">
+                                    <img alt="Photo of someone working poolside at a resort"
+                                         src="../../static/img/tiles-bg.jpg">
+                                </a>
+
+                                <div class="post-image-meta">
+                                    <h3>CSSConf Photos</h3>
+                                </div>
+                            </div>
+
+                            <div class="pure-u-1-2">
+                                <a href="http://www.flickr.com/photos/uberlife/8907351301/">
+                                    <img alt="Photo of the sunset on the beach"
+                                         src="../../static/img/tiles-bg-2.jpg">
+                                </a>
+
+                                <div class="post-image-meta">
+                                    <h3>JSConf Photos</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="post">
+                    <header class="post-header">
+                        <img class="post-avatar" alt="Andrew Wooldridge&#x27;s avatar" height="48" width="48" src="../../static/img/jeki_chan.jpg">
+
+                        <h2 class="post-title">YUI 3.10.2 Released</h2>
+
+                        <p class="post-meta">
+                            By <a class="post-author" href="#">Andrew Wooldridge</a> under <a class="post-category post-category-yui" href="#">YUI</a>
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        <p>
+                            We are happy to announce the release of YUI 3.10.2! You can find it now on the Yahoo! CDN, download it directly, or pull it in via npm. We’ve also updated the YUI Library website with the latest documentation.
+                        </p>
+                    </div>
+                </section>
+				
+            </div>
+
+            <footer class="footer">
+                <div class="pure-menu pure-menu-horizontal pure-menu-open">
+                    <ul>
+                        <li><a href="/{{.username}}/home">About</a></li>
+                        <li><a href="/{{.username}}/home">Twitter</a></li>
+                        <li><a href="/{{.username}}/home">Github</a></li>
+                    </ul>
+                </div>
+            </footer>
+			
+        </div>
+    </div>
+</div>
+
+<script src="../../static/js/yui.js"></script>
+<script>
+YUI().use('node-base', 'node-event-delegate', function (Y) {
+    // This just makes sure that the href="#" attached to the <a> elements
+    // don't scroll you back up the page.
+    Y.one('body').delegate('click', function (e) {
+        e.preventDefault();
+    }, 'a[href="#"]');
+});
+</script>
+
+</body>
+</html>
