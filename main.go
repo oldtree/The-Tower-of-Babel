@@ -4,6 +4,7 @@ package main
 import (
 	"Eva1/common_layer"
 	"Eva1/routers"
+	"Eva1/routers/explorer"
 	"Eva1/routers/personals"
 	"Eva1/routers/projects"
 	"Eva1/utils"
@@ -28,6 +29,9 @@ func init() {
 	//beego.Router("/home", &routers.HomeController{}, "get:Get")
 	fmt.Println("Hello World!")
 }
+func init_communiction() {
+
+}
 
 func init_cache() {
 	common_layer.Using_cache()
@@ -37,17 +41,19 @@ func init_cache() {
 func init_login_routers() {
 	beego.Router("/", &routers.MainController{}, "get:FirstGet")
 	beego.Router("/login", &routers.MainController{}, "get:Get;post:Post")
-	beego.Router("/register", &routers.RegisterController{}, "post:Post")
+	beego.Router("/register", &routers.RegisterController{}, "get:Get;post:Post")
 }
 
 func init_user_home_routers() {
 	beego.Router("/:id([A-z]+|[0-9]+)/home", &personals.HomeController{}, "get:Get;post:Post;put:Put;delete:Delete")
 	beego.Router("/:id([A-z]+|[0-9]+)/edit_self", &personals.EditController{}, "get:Get;post:Post;put:Put;delete:Delete")
+	beego.Router("/:id([A-z]+|[0-9]+)/friends", &personals.FriendsController{}, "get:Get;post:Post;put:Put;delete:Delete")
+	beego.Router("/explorer", &explorer.ExploerController{}, "get:Get;post:Post")
 }
 
 func init_user_project_routers() {
 	beego.Router("/:id([A-z]+)/projects", &projects.ProjectsController{}, "get:Get;post:Post")
-	beego.Router("/:id([A-z]+)/edit_self", &projects.ProjectsController{}, "get:Get;post:Post;put:Put;delete:Delete")
+	beego.Router("/explorer", &explorer.ExploerController{}, "get:Get")
 }
 
 func main() {
@@ -56,6 +62,5 @@ func main() {
 	} else {
 		beego.Info("Develment mode enabled")
 	}
-
 	beego.Run()
 }

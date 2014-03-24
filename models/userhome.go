@@ -15,11 +15,6 @@ type Home struct {
 	User_really_is  string `orm:"size(128)"`
 }
 
-//type UserloginForm struct {
-//	Email    string `form:"email" valid:"Required;Email;MaxSize(80)"`
-//	Password string `form:"password" valid:"Required;MinSize(4);MaxSize(30)"`
-//}
-
 func init() {
 	fmt.Println("init models file ")
 	orm.RegisterModel(new(Home))

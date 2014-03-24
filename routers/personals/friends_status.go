@@ -23,5 +23,5 @@ func (this *FriendsController) Get() {
 	this.Data["title"] = "进化者"
 	this.Data["username"] = user_name
 	this.Data["useremail"] = user_email
-	this.TplNames = "home.html"
+	this.TplNames = "test.html"
 }

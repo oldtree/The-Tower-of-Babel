@@ -34,9 +34,6 @@ func User_login(user *User, c *beego.Controller) bool {
 	if err != nil {
 		return false
 	}
-	fmt.Println(n)
-
-	fmt.Println("5555555555555555555555")
 	if n == 1 {
 		err := login_user_conn.Raw("SELECT Id,User_name,User_email,User_address,User_password,User_created,User_update,User_company,User_want_to_be,User_really_is,User_project_json_path FROM user WHERE User_email = ?", user.User_email).QueryRow(user)
 		fmt.Println(err)

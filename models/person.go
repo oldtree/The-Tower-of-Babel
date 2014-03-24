@@ -31,21 +31,6 @@ type User struct {
 	User_project_json_path string    `orm:"size(128)"`
 }
 
-func New_user(user_name string, user_email string, user_passworld string) User {
-	new_user := User{}
-	new_user.User_name = user_name
-	new_user.User_email = user_email
-	new_user.User_password = user_passworld
-	return new_user
-}
-
-func Login_user(user_email string, user_passworld string) User {
-	new_user := User{}
-	new_user.User_email = user_email
-	new_user.User_password = user_passworld
-	return new_user
-
-}
 func (u *User) Insert() error {
 	_, err := orm.NewOrm().Insert(u)
 	return err

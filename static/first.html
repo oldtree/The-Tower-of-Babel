@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a responsive photo gallery.">
+    <title>{{.title}}</title>
+    <link rel="stylesheet" href="css/pure.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="css/layouts/gallery-grid-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="css/layouts/gallery-grid.css">
+    <!--<![endif]-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="css/layouts/gallery-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="css/layouts/gallery.css">
+    <!--<![endif]-->
+
+</head>
+<body >
+  <div>
+      <div class="pure-menu pure-menu-open pure-menu-horizontal">
+          <ul>
+              <li><a href="#">主页</a></li>
+              <li class="pure-menu-selected"><a href="#">Flickr</a></li>
+              <li><a href="#">Messenger</a></li>
+              <li><a href="#">Sports</a></li>
+              <li><a href="#">Finance</a></li>
+          </ul>
+      </div>
+      <div class="photo-box photo-box-thin pure-u-3 pure-u-med-4-3">
+          <a href="http://twitter.com/iBoZR">
+              <img src="http://25.media.tumblr.com/95c842c76d60b7bc982d92c76216d037/tumblr_mx3tnm96k81st5lhmo1_1280.jpg"
+                   alt="Rain Drops">
+          </a>
+
+          <aside class="photo-box-caption">
+                <span>
+                    by <a href="http://twitter.com/iBoZR">Thanun Buranapong</a>
+                </span>
+          </aside>
+      </div>
+      <div class="photo-box photo-box-thin pure-u-1 pure-u-med-4-3">
+          <a href="http://ngkhanhlinh.dunked.com/">
+              <img src="http://24.media.tumblr.com/c35afcc83e18ea7875160f64c039f471/tumblr_mwhdohfePJ1st5lhmo1_1280.jpg"
+                   alt="Balloons">
+          </a>
+
+          <aside class="photo-box-caption">
+                <span>
+                    by <a href="http://ngkhanhlinh.dunked.com/">Linh Nguyen</a>
+                </span>
+          </aside>
+      </div>
+      <div class="pure-u-1 form-box">
+          <div class="l-box">
+              <h2>EVA</h2>
+
+              <form class="pure-form" method="post">
+                  <input type="text" name ="email" id="name" placeholder="Name/Email "  required>
+                  <input type="text" name ="password" id="password" placeholder="Password " required>
+                  <div>
+                      <button type="submit" class="pure-button pure-button-primary" > Login </button>
+                      <button type="submit" class="pure-button pure-button-primary" onClick="window.location.href='/register'">Register</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+  <div class="footer">
+      EVAer.
+  </div>
+</body>
+</html>
