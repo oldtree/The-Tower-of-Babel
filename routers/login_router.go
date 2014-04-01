@@ -38,15 +38,9 @@ func (this *MainController) Post() {
 		//path := strconv.Itoa(int(user_info.Id))
 		path := user_info.User_name
 		path = "/" + path + "/home"
-		fmt.Println(path)
-		//models.Get_user_byname(user_info.User_name)
-		fmt.Println(user_info.User_name)
-		fmt.Println(user_info.User_email)
-		fmt.Println("-----------------------------------------------------------")
 		this.Ctx.SetCookie("user_name", user_info.User_name)
 		this.Ctx.SetCookie("user_email", user_info.User_email)
 		this.Ctx.SetCookie("user_login", "true")
-		fmt.Println("-----------------------------------------------------------")
 		fmt.Println("begin info ")
 		fmt.Println(user_info.User_name)
 		fmt.Println(user_info.User_email)

@@ -5,10 +5,11 @@ import (
 	"fmt"
 	//	"github.com/astaxie/beego/validation"
 	//	"strings"
+	"Eva/routers"
 )
 
 type EditController struct {
-	BaseController
+	routers.BaseController
 }
 
 func (this *EditController) Get() {

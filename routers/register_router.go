@@ -43,8 +43,6 @@ func (this *RegisterController) Post() {
 		this.Redirect("/register", 302)
 		return
 	}
-	//user := new(models.User)
-
 	err = models.RegisterUser(&user_info, form)
 	fmt.Println(err)
 	fmt.Println(user_info.User_password)

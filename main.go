@@ -4,7 +4,7 @@ package main
 import (
 	"Eva1/common_layer"
 	"Eva1/routers"
-	"Eva1/routers/explorer"
+	"Eva1/routers/exploer"
 	"Eva1/routers/personals"
 	"Eva1/routers/projects"
 	"Eva1/utils"
@@ -62,5 +62,6 @@ func main() {
 	} else {
 		beego.Info("Develment mode enabled")
 	}
+
 	beego.Run()
 }

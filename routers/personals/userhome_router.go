@@ -1,11 +1,12 @@
 package personals
 
 import (
+	"Eva/routers"
 	"fmt"
 )
 
 type HomeController struct {
-	BaseController
+	routers.BaseController
 }
 
 func (this *HomeController) Get() {
